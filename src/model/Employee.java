@@ -82,4 +82,17 @@ public class Employee {
 
     public void add(List<Employee> employeeList) {
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "Employee_ID=" + Employee_ID +
+                ", First_Name='" + First_Name + '\'' +
+                ", Last_Name='" + Last_Name + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", gender=" + gender +
+                ", doB='" + doB + '\'' +
+                '}';
+    }
 }
