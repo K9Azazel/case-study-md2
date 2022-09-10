@@ -3,21 +3,28 @@ package model;
 import java.util.List;
 
 public class Employee {
-    private int Employee_ID;
-    private String First_Name;
-    private String Last_Name;
+    private int employeeID;
+    private String firstName;
+    private String lastName;
     private String email;
     private String phone;
     private boolean gender = true; // true: male , false: female
     private String doB;
 
     public Employee() {
+        this.employeeID = employeeID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.gender = gender;
+        this.doB = doB;
     }
 
-    public Employee(int employee_ID, String first_Name, String last_Name, String email, String phone, boolean gender, String doB) {
-        Employee_ID = employee_ID;
-        First_Name = first_Name;
-        Last_Name = last_Name;
+    public Employee(int employeeID, String firstName, String lastName, String email, String phone, boolean gender, String doB) {
+        this.employeeID = employeeID;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.phone = phone;
         this.gender = gender;
@@ -25,27 +32,27 @@ public class Employee {
     }
 
     public int getEmployee_ID() {
-        return Employee_ID;
+        return employeeID;
     }
 
     public void setEmployee_ID(int employee_ID) {
-        Employee_ID = employee_ID;
+        employeeID = employee_ID;
     }
 
     public String getFirst_Name() {
-        return First_Name;
+        return firstName;
     }
 
     public void setFirst_Name(String first_Name) {
-        First_Name = first_Name;
+        firstName = first_Name;
     }
 
     public String getLast_Name() {
-        return Last_Name;
+        return lastName;
     }
 
     public void setLast_Name(String last_Name) {
-        Last_Name = last_Name;
+        lastName = last_Name;
     }
 
     public String getEmail() {
@@ -86,9 +93,9 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" +
-                "Employee_ID=" + Employee_ID +
-                ", First_Name='" + First_Name + '\'' +
-                ", Last_Name='" + Last_Name + '\'' +
+                "employeeID=" + employeeID +
+                ", firstName='" + firstName + '\'' +
+                ", Last_Name='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", gender=" + gender +
