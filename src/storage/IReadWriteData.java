@@ -1,8 +1,8 @@
 package storage;
 
+import model.Employee;
+
 import java.util.List;
 
-public interface IReadWriteData<T> {
-        List<T> readData();
-        void writeData(List<T> tList);
+public interface IReadWriteData extends InterfaceReadWriteData<Employee> {
     }

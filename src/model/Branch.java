@@ -9,8 +9,8 @@ public abstract class Branch extends Employee {
         this.idBranch = idBranch;
     }
 
-    public Branch(int employee_ID, String first_Name, String last_Name, String email, String phone, boolean gender, String doB, String branch_name, String idBranch) {
-        super(employee_ID, first_Name, last_Name, email, phone, gender, doB);
+    public Branch(int employee_ID, String first_Name, String last_Name, String email, String phone, String doB, String branch_name, String idBranch) {
+        super(employee_ID, first_Name, last_Name, email, phone, doB);
         this.branch_name = branch_name;
         this.idBranch = idBranch;
     }

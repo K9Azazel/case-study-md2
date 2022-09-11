@@ -1,14 +1,14 @@
 package model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Employee {
+public class Employee implements Serializable {
     private int employeeID;
     private String firstName;
     private String lastName;
     private String email;
     private String phone;
-    private boolean gender = true; // true: male , false: female
     private String doB;
 
     public Employee() {
@@ -17,17 +17,16 @@ public class Employee {
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
-        this.gender = gender;
+
         this.doB = doB;
     }
 
-    public Employee(int employeeID, String firstName, String lastName, String email, String phone, boolean gender, String doB) {
+    public Employee(int employeeID, String firstName, String lastName, String email, String phone, String doB) {
         this.employeeID = employeeID;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
-        this.gender = gender;
         this.doB = doB;
     }
 
@@ -71,14 +70,6 @@ public class Employee {
         this.phone = phone;
     }
 
-    public boolean isGender() {
-        return gender;
-    }
-
-    public void setGender(boolean gender) {
-        this.gender = gender;
-    }
-
     public String getDoB() {
         return doB;
     }
@@ -98,7 +89,6 @@ public class Employee {
                 ", Last_Name='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
-                ", gender=" + gender +
                 ", doB='" + doB + '\'' +
                 '}';
     }

@@ -3,32 +3,20 @@ package controller;
 import model.Employee;
 import storage.IReadWriteData;
 import storage.ReadWriteEmployee;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.lang.String;
 import java.util.Objects;
 
 public class EmployeeController {
-    private String name;
+    public static List<Employee> employeeList = new ArrayList<>();
 
-    public EmployeeController() {
-    }
-
-    public EmployeeController(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     static IReadWriteData iReadWriteData = new ReadWriteEmployee();
-    public static List<Employee> employeeList = iReadWriteData.readData();
 
-    public void addNewEmployee(Employee employee) {
+    public static void addNewEmployee(Employee employee) {
+        employeeList = iReadWriteData.readData();
         employeeList.add(employee);
         iReadWriteData.writeData(employeeList);
 
@@ -39,7 +27,7 @@ public class EmployeeController {
         iReadWriteData.writeData(employeeList);
     }
 
-    public void deleteEmployee(int index) {
+    public static void deleteEmployee(int index) {
         employeeList.remove(index);
         iReadWriteData.writeData(employeeList);
     }
@@ -56,5 +44,15 @@ public class EmployeeController {
             }
         }
         return -1;
+    }
+    public static boolean checkIDEmployee(int id) {
+        boolean check = false;
+        for (Employee u: employeeList
+             ) {
+            if (id == u.getEmployee_ID()) {
+                check = true;
+            }
+        }
+        return check;
     }
 }
