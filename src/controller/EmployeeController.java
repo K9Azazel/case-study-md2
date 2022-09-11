@@ -22,7 +22,8 @@ public class EmployeeController {
 
     }
 
-    public void setEmployeeList(int index, Employee employee) {
+    public static void setEmployeeList(int index, Employee employee) {
+        employeeList = iReadWriteData.readData();
         employeeList.set(index, employee);
         iReadWriteData.writeData(employeeList);
     }
@@ -32,7 +33,7 @@ public class EmployeeController {
         iReadWriteData.writeData(employeeList);
     }
 
-    public void displayEmployee() {
+    public static void displayEmployee() {
         for (int i = 0; i < employeeList.size(); i++) {
             System.out.println(employeeList.get(i));
         }
