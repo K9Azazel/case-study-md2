@@ -40,6 +40,12 @@ public class EmployeeDisplay {
                 editMenu();
                 break;
             case 3:
+                deleteMenuEmployee();
+                break;
+            case 4:
+                displayEmployee();
+                break;
+            case 5:
         }
     }
 
@@ -48,6 +54,12 @@ public class EmployeeDisplay {
         System.out.println("Nhập id cần sửa");
         int id = scanner.nextInt();
         checkEditID(id);
+    }
+    private void deleteMenuEmployee() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập id cần sửa");
+        int id = scanner.nextInt();
+        deleteEmployee(id);
     }
 
     private void checkEditID(int id) {
@@ -119,21 +131,6 @@ public class EmployeeDisplay {
             System.out.println("");
         }
         menuSystem();
-    }
-
-
-    public static int getIndexOfEmployee() {
-        System.out.println("Nhập vị trí nhân viên cần sửa hoặc xóa");
-        Scanner scanner = new Scanner(System.in);
-        int index = scanner.nextInt();
-        return index;
-    }
-
-    public static String getIdEmployee() {
-        System.out.println("Nhập mã nhân viên: ");
-        Scanner scanner = new Scanner(System.in);
-        String EmployeeID = scanner.nextLine();
-        return EmployeeID;
     }
 }
 

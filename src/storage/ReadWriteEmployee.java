@@ -26,19 +26,19 @@ public class ReadWriteEmployee implements IReadWriteData {
             fis = new FileInputStream(fileName);
         } catch (FileNotFoundException exception) {
             exception.printStackTrace();
-            System.err.println("Can't open file or can't find file");
+            System.err.println("Không thể tìm hoặc mở file");
         }
         ObjectInputStream ois = null;
         try {
             ois = new ObjectInputStream(fis);
         } catch (IOException exception) {
             exception.printStackTrace();
-            System.err.println("Can't open file or can't find file");
+            System.err.println("Không thể tìm hoặc mở file");
         }
         Object obj = null;
         try {
             obj = ois.readObject();
-            System.out.println("Load finish!!!");
+            System.out.println("Đã ghi dữ liệu!");
         } catch (IOException | ClassNotFoundException exception) {
             exception.printStackTrace();
         }
@@ -57,7 +57,7 @@ public class ReadWriteEmployee implements IReadWriteData {
             oos.writeObject(employeeList);
             oos.close();
             fos.close();
-            System.out.println("Save finish!");
+            System.out.println("Đã lưu!");
         } catch (FileNotFoundException exception) {
             exception.printStackTrace();
         } catch (IOException exception) {
