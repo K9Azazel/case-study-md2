@@ -20,18 +20,13 @@ public class EmployeeController {
         iReadWriteData.writeData(employeeList);
 
     }
-
-    public static void setEmployeeList(int index, Employee employee) {
-        employeeList = iReadWriteData.readData();
-        employeeList.set(index, employee);
-        iReadWriteData.writeData(employeeList);
-    }
     public static boolean checkIDEmployee(int id) {
         boolean check = false;
         for (Employee u : employeeList
         ) {
             if (id == u.getEmployee_ID()) {
                 check = true;
+                break;
             }
         }
         return check;

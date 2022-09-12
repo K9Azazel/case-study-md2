@@ -1,7 +1,6 @@
 package view;
 
 import model.Employee;
-import storage.ReadWriteEmployee;
 
 import java.util.List;
 import java.util.Scanner;
@@ -45,7 +44,12 @@ public class EmployeeDisplay {
             case 4:
                 displayEmployee();
                 break;
-            case 5:
+            case 0:
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Vui lòng nhập lại");
+                menuEmployee();
         }
     }
 
@@ -128,7 +132,7 @@ public class EmployeeDisplay {
         } else {
             System.out.println("Đã đăng ký thành công ID cho nhân viên mới");
             addNewEmployee(new Employee(id, firstName, lastName, email, phone, doB));
-            System.out.println("");
+            System.out.println("Đã nhập các thông tin cho nhân viên mới");
         }
         menuSystem();
     }
